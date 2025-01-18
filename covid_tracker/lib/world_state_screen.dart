@@ -4,6 +4,7 @@ import 'package:covid_tracker/services/states_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:pie_chart/pie_chart.dart';
+import 'profile_screen.dart'; // Import ProfileScreen
 
 class WorldStateScreen extends StatefulWidget {
   const WorldStateScreen({super.key});
@@ -126,6 +127,31 @@ class _WorldStateScreenState extends State<WorldStateScreen>
                               style:
                                   TextStyle(color: Colors.white, fontSize: 18),
                             )),
+                          ),
+                        ),
+                        const SizedBox(height: 16), // Jarak antar tombol
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ProfileScreen(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: Colors.blue, // Warna tombol Profile
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                'Go to Profile',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18),
+                              ),
+                            ),
                           ),
                         ),
                       ],
